@@ -8,12 +8,12 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/s3"
 )
 
-var client *s3.client
+var client *s3.Client
 
 func init() {
 	config, err := config.LoadDefaultConfig(context.TODO())
 	if err != nil {
-		panic("Configuration error! It is: ", err.Error())
+		panic("Configuration error! It is: " + err.Error())
 	}
 	client = s3.NewFromConfig(config)
 }
